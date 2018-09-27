@@ -24,7 +24,7 @@ def main():
     sample_mean = np.sum(data_row) / len(data_row)
     sample_variance = get_sample_variance(data_row, sample_mean)
     standard_deviation = math.sqrt(sample_variance)
-    
+
     display_result(sample_mean, sample_variance, standard_deviation)
 
 

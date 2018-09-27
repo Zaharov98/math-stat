@@ -6,7 +6,7 @@ import math
 import pprint
 import numpy as np
 import data.sequence
-from plotting import freq_polygon, relative_freq_histogram
+from plotting import freq_polygon, relative_freq_histogram, empirical_distribution
 
 
 def main():
@@ -34,6 +34,8 @@ def main():
 
     bins = [interval[0] for interval in intervals]
     relative_freq_histogram.graph(freq_destiny, bins)
+
+    empirical_distribution.graph(bins, relative_freq)
 
 
 if __name__ == '__main__':
