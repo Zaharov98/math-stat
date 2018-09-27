@@ -2,11 +2,9 @@
     Theory of Probability and Mathematical Statistics task
 """
 
-import math
-import pprint
 import numpy as np
 import data.sequence
-from plotting import freq_polygon, relative_freq_histogram, empirical_distribution
+from plotting.variation import *
 
 
 def main():
