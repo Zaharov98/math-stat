@@ -5,7 +5,7 @@ from . import _common
 from plotting.variation import *
 
 
-def run(data_row, variation_row, interval_numb):
+def run(variation_row, interval_numb):
     """ Run tasks related to the plots """
     swing = variation_row[-1] - variation_row[0]
     h = swing / interval_numb
@@ -18,7 +18,7 @@ def run(data_row, variation_row, interval_numb):
     interval_middle = [(interval[0] + interval[1]) / 2 for interval in intervals]
     freq_polygon.graph(interval_middle, interval_freq)
 
-    relative_freq = [freq / len(data_row) for freq in interval_freq]
+    relative_freq = [freq / len(variation_row) for freq in interval_freq]
     freq_destiny = [freq / h for freq in relative_freq]
 
     bins = [interval[0] for interval in intervals]
