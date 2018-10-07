@@ -3,19 +3,9 @@
 """
 
 import math
+import itertools
 import data.sequence
 from plotting.variation import *
-
-
-def display_result(sample_mean, sample_variance, standard_deviation):
-    print('\nLab 2 result\n')
-    print('Sample mean: {0}'.format(sample_mean))
-    print('Sample variance: {0}'.format(sample_variance))
-    print('Standard deviation: {0}'.format(standard_deviation))
-
-
-def get_sample_variance(row, weights, sample_mean, count):
-    return (1 / count) * sum([n * (x - sample_mean) ** 2 for x, n in zip(row, weights)])
 
 
 def main():
@@ -32,6 +22,21 @@ def main():
 
     freq_polygon.graph(interval_middles, data_weight)
     relative_freq_histogram.graph(data_weight, interval_middles)
+
+    relative_interval_freq = [weight / sum(data_weight) for weight in data_weight]
+    interval_ends = [interval[1] for interval in data_row]
+    empirical_distribution.graph(interval_ends, relative_interval_freq)
+
+
+def display_result(sample_mean, sample_variance, standard_deviation):
+    print('\nLab 2 result\n')
+    print('Sample mean: {0}'.format(sample_mean))
+    print('Sample variance: {0}'.format(sample_variance))
+    print('Standard deviation: {0}'.format(standard_deviation))
+
+
+def get_sample_variance(row, weights, sample_mean, count):
+    return (1 / count) * sum([n * (x - sample_mean) ** 2 for x, n in zip(row, weights)])
 
 
 if __name__ == '__main__':
