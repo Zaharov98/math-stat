@@ -7,6 +7,7 @@ import data.sequence
 import tasks.plotting
 import tasks.calculation
 import tasks.pearson
+import tasks.intervals
 
 
 def main():
@@ -17,6 +18,7 @@ def main():
     # tasks.plotting.run(variation_row, interval_numb)
     # tasks.calculation.run(variation_row, interval_numb)
     tasks.pearson.run(variation_row, interval_numb)
+    tasks.intervals.run(variation_row, interval_numb)
 
 
 if __name__ == '__main__':

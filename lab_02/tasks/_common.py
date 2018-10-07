@@ -16,3 +16,7 @@ def get_sample_mean(row, row_weight):
 
 def get_sample_variance(row, row_weight, mean):
     return (1 / sum(row_weight)) * sum([row_weight[i] * (row[i] - mean)**2 for i in range(0, len(row))])
+
+
+def get_corrected_variance(row, row_weight, mean):
+    return (sum(row_weight) / (sum(row_weight) - 1)) * get_sample_variance(row, row_weight, mean)
