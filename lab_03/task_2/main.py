@@ -14,7 +14,7 @@ def main():
     interval_middles = [(interval[0] + (interval[1] - interval[0]) / 2) for interval in intervals]
 
     freq_polygon.graph(interval_middles, weights)
-    relative_freq_histogram.graph(weights, interval_middles)
+    relative_freq_histogram.graph(weights, interval_middles, width=3)
 
     relative_interval_freq = [weight / n for weight in weights]
     interval_ends = [interval[1] for interval in intervals]
