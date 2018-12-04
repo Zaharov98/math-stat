@@ -15,8 +15,8 @@ def main():
     variation_row = np.array(sorted(data_row))
     interval_numb = 9
 
-    # tasks.plotting.run(variation_row, interval_numb)
-    # tasks.calculation.run(variation_row, interval_numb)
+    tasks.plotting.run(variation_row, interval_numb)
+    tasks.calculation.run(variation_row, interval_numb)
     tasks.pearson.run(variation_row, interval_numb)
     tasks.intervals.run(variation_row, interval_numb)
 
