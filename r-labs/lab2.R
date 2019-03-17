@@ -1,5 +1,6 @@
 # import libraries
 library(MASS)
+library(ggplot2)
 
 # print initial data set
 head(mtcars)
@@ -32,5 +33,13 @@ plot(lda(am ~., data=mtcars), main="transmission")
 
 # Factor analysis
 #==================================================
+# numbers of factors
+pvals <- c()
+for (f in 1:6){
+  pvals <- c(pvals, factanal(mtcars, f)$PVAL)
+}
 
+# most attractive factor is five
+factanal(mtcars, 5)
 
+barplot(pvals, names.arg=1:6)
